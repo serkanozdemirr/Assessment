@@ -1,0 +1,38 @@
+﻿@model List<Assessment.Core.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Product List</h1>
+<br />
+<table class="table table-dark table-striped table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Supplier Id</th>
+        <th>Category Id</th>
+        <th>Quantity Per Unit</th>
+        <th>Unit Price</th>
+        <th>Units In Stock</th>
+        <th>Units On Order</th>
+        <th>Reorder Level</th>
+        <th>Discontinued</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+           <td>@x.SupplierId</td>
+            <td>@x.CategoryId</td>
+            <td>@x.QuantityPerUnit</td>
+            <td>@x.UnitPrice</td>
+            <td>@x.UnitsInStock</td>
+            <td>@x.UnitsOnOrder</td>
+            <td>@x.ReorderLevel</td>
+            <td>@x.Discontinued</td> 
+            <td>@x.Name</td>
+
+        </tr>
+    }
+</table>

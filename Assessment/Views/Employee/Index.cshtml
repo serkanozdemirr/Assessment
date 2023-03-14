@@ -1,0 +1,50 @@
+﻿@model List<Assessment.Core.Models.Employee>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Employee List</h1>
+<br />
+<table class="table table-dark table-striped table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Title</th>
+        <th>Title Of Courtesy</th>
+        <th>Birth Date</th>
+        <th>Hire Date</th>
+        <th>Address Street</th>
+        <th>Address City</th>
+        <th>Address Region</th>
+        <th>Address PostalCode</th>
+        <th>Address Country</th>
+        <th>Address Phone</th>
+        <th>Notes</th>
+        <th>Reports To</th>
+        <th>Territory Ids Count</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.LastName</td>
+            <td>@x.FirstName</td>
+            <td>@x.Title</td>
+            <td>@x.TitleOfCourtesy</td>
+            <td>@x.BirthDate</td>
+            <td>@x.HireDate</td>
+            <td>@x.Address.Street</td>
+            <td>@x.Address.City</td>
+            <td>@x.Address.Region</td>
+            <td>@x.Address.PostalCode</td>
+            <td>@x.Address.Country</td>
+            <td>@x.Address.Phone</td>
+            <td>@x.Notes</td>
+            <td>@x.ReportsTo</td>
+            <td>@x.TerritoryIds.Count</td>
+
+        </tr>
+    }
+</table>
